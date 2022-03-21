@@ -10,9 +10,9 @@ namespace RepositoryLayer
 {
     public class RepositoryOperations<T> : IRepositoryOperations<T> where T : class
     {
-        ProductDbContext _context;
+        DbContext _context;
         readonly DbSet<T> _dbSet;
-        public RepositoryOperations(ProductDbContext product)
+        public RepositoryOperations(DbContext product)
         {
             _context = product;
             _dbSet = _context.Set<T>();

@@ -1,4 +1,5 @@
 ﻿using DomainLayer;
+using DomainLayer.ProductLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace BusinessLayer
 {
     public interface IProductCatalog
     {
-        void AddProduct(Product product);
+        void AddBrand(ProductBrand product);
+        List<ProductBrand> productBrands();
     }
 }
