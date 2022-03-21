@@ -1,0 +1,16 @@
+﻿@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+@model DomainLayer.Product
+
+<form action="Index" method="post">
+    <label asp-for="id"></label>
+    <input asp-for="id" type="text"/>
+    <label asp-for="name"></label>
+    <input asp-for="name" type="text"/>
+    <label asp-for="model"></label>
+    <input asp-for="model" type="text"/>
+    <label asp-for="description"></label>
+    <input asp-for="description" type="text"/>
+    <label asp-for="imagePath"></label>
+    <input asp-for="imagePath" type="text"/>
+    <input type="button"/>
+</form>
