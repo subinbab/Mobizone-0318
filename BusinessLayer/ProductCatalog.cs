@@ -25,11 +25,16 @@ namespace BusinessLayer
             _repo.Add(brand);
             _repo.Save();
         }
-        public List<ProductBrand> productBrands()
+        public List<string> productBrands()
         {
             IEnumerable<ProductBrand> brand = _repo.Get();
-            List<ProductBrand> brandList = brand.ToList();
-            return brandList;
+            List<string> vs = new List<string>();
+            foreach (ProductBrand brands in brand)
+            {
+                vs.Add(brands.name);
+            }
+            /*List<ProductBrand> brandList = brand.ToList();*/
+            return vs;
         }
     }
 }

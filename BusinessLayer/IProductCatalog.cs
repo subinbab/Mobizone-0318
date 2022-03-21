@@ -11,6 +11,6 @@ namespace BusinessLayer
     public interface IProductCatalog
     {
         void AddBrand(ProductBrand product);
-        List<ProductBrand> productBrands();
+        List<string> productBrands();
     }
 }

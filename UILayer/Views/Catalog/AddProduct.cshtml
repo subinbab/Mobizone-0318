@@ -4,5 +4,4 @@
 @{
 }
 @model DomainLayer.ProductLayer.ProductBrand
-@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
 <select asp-for="name" asp-items="new SelectList(ViewBag.Brands)"></select>

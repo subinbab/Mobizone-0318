@@ -23,7 +23,6 @@ namespace UILayer.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            ViewBag.Brand = new List<string>() { "samsung", "oppo" };
             return View();
         }
         [HttpPost]
@@ -35,23 +34,15 @@ namespace UILayer.Controllers
         }
         public IActionResult _BrandView(ProductBrand brand)
         {
-            _catalog.AddBrand(brand);
+            if (ModelState.IsValid)
+            {
+                _catalog.AddBrand(brand);
+            }
             return RedirectToAction("/");
         }
         public IActionResult AddProduct()
         {
-            List<ProductBrand> barndlists = _context.productBrands.ToList();
-            List<SelectListItem> brandView = barndlists.ConvertAll(a =>
-            {
-                return new SelectListItem()
-                {
-                    Text = a.ToString(),
-                    Value = a.ToString(),
-                    Selected = false
-                };
-            }
-            );
-            ViewBag.Brands = brandView;
+            ViewBag.Brands = _catalog.productBrands();
             return View();
         }
     }
